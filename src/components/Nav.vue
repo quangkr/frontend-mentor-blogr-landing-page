@@ -1,20 +1,31 @@
 <template>
   <nav id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <div class="nav-content">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
   </nav>
 </template>
 
 <style lang="scss" scoped>
 #nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+}
+
+.nav-content {
   padding: 30px;
+  font-family: var(--font-family-secondary);
 
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    font-weight: 600;
+    color: var(--color-white-1);
+    opacity: 0.8;
 
     &.router-link-exact-active {
-      color: #42b983;
+      opacity: 1;
     }
   }
 }
