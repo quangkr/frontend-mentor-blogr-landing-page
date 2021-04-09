@@ -1,5 +1,5 @@
 <template>
-  <div class="home-page">
+  <div :style="styleVars" class="home-page">
     <section class="section-hero">
       <h1 class="hero-title">A modern publishing platform</h1>
       <h2 class="hero-description">
@@ -16,7 +16,11 @@
 }
 
 .section-hero {
-  background-image: linear-gradient(to right, var(--gradient-red-1));
+  background-image: var(--hero-background-url),
+    linear-gradient(to right, var(--gradient-red-1));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 2200px 2200px, cover;
 
   display: flex;
   flex-direction: column;
@@ -41,3 +45,17 @@
   margin: 0;
 }
 </style>
+
+<script>
+import HeroSvgBackground from "@/assets/bg-pattern-intro.svg";
+export default {
+  name: "Home",
+  computed: {
+    styleVars() {
+      return {
+        "--hero-background-url": `url(${HeroSvgBackground})`,
+      };
+    },
+  },
+};
+</script>
