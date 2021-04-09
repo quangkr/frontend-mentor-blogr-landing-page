@@ -5,6 +5,10 @@
       <h2 class="hero-description">
         Grow your audience and build your online brand
       </h2>
+      <div class="buttons-group">
+        <Button>Start for Free</Button>
+        <Button outlined>Learn more</Button>
+      </div>
     </section>
   </div>
 </template>
@@ -21,12 +25,13 @@
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 2200px 2200px, cover;
+  height: 600px;
+  border-bottom-left-radius: var(--border-radius-large);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 600px;
 }
 
 .hero-title {
@@ -44,12 +49,24 @@
   color: var(--color-white-1);
   margin: 0;
 }
+
+.buttons-group {
+  margin-top: 3rem;
+
+  & > *:not(:last-child) {
+    margin-right: 1.2rem;
+  }
+}
 </style>
 
 <script>
+import Button from "@/components/Button.vue";
 import HeroSvgBackground from "@/assets/bg-pattern-intro.svg";
 export default {
   name: "Home",
+  components: {
+    Button,
+  },
   computed: {
     styleVars() {
       return {

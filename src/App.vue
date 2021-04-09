@@ -20,5 +20,8 @@
   --font-family-secondary: Ubuntu;
 
   --content-width: 1280px;
+
+  --border-radius: 30px;
+  --border-radius-large: 80px;
 }
 </style>
