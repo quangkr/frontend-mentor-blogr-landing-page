@@ -1,5 +1,4 @@
 <template>
-  <Nav />
   <router-view />
 </template>
 
@@ -23,11 +22,3 @@
   --content-width: 1280px;
 }
 </style>
-
-<script>
-import Nav from "@/components/Nav";
-export default {
-  name: "App",
-  components: { Nav },
-};
-</script>
