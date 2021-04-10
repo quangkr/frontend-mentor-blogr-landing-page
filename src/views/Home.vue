@@ -2,13 +2,33 @@
   <div :style="styleVars" class="home-page">
     <section class="section-hero">
       <h1 class="hero-title">A modern publishing platform</h1>
-      <h2 class="hero-description">
+      <p class="hero-description">
         Grow your audience and build your online brand
-      </h2>
+      </p>
       <div class="buttons-group">
         <Button>Start for Free</Button>
         <Button outlined>Learn more</Button>
       </div>
+    </section>
+    <section class="section-features">
+      <h2 class="section-title">Designed for the future</h2>
+      <h3 class="section-subtitle">Introducing an extensible editor</h3>
+      <p class="copy-text">
+        Blogr fetures an exceedingly intuitive interface which let you focus on
+        one thing: creating content. The editor supports management of multiple
+        blogs and allows easy manipulation of embeds such as images, videos and
+        Markdown. Extensibility with plugins and themes provide easy way to add
+        functionality or change the looks of a blog.
+      </p>
+      <h3 class="section-subtitle">Robust content management</h3>
+      <p class="copy-text">
+        Flexible content management enables users to easily move through posts.
+        Increase the usability of your blog by adding customized categories,
+        sections, format or flow. With this functionality, you&apos;re in full
+        control.
+      </p>
+      <img :src="SvgPatternCircleLight" alt="Circle pattern" />
+      <img :src="SvgIllustrationEditorDesktop" alt="Editor illustration" />
     </section>
   </div>
 </template>
@@ -61,16 +81,26 @@
 
 <script>
 import Button from "@/components/Button.vue";
-import HeroSvgBackground from "@/assets/bg-pattern-intro.svg";
+
+import SvgHeroBackground from "@/assets/bg-pattern-intro.svg";
+import SvgPatternCircleLight from "@/assets/bg-pattern-circles-light.svg";
+import SvgIllustrationEditorDesktop from "@/assets/illustration-editor-desktop.svg";
+
 export default {
   name: "Home",
   components: {
     Button,
   },
+  data() {
+    return {
+      SvgPatternCircleLight,
+      SvgIllustrationEditorDesktop,
+    };
+  },
   computed: {
     styleVars() {
       return {
-        "--hero-background-url": `url(${HeroSvgBackground})`,
+        "--hero-background-url": `url(${SvgHeroBackground})`,
       };
     },
   },
