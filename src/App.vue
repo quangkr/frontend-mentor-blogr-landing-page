@@ -22,7 +22,11 @@
   --content-width: 1280px;
 
   --border-radius: 30px;
-  --border-radius-large: 80px;
+  --border-radius-large: 150px;
+}
+
+#app {
+  width: 100vw;
 }
 
 @media only screen and (min-width: $sm) {

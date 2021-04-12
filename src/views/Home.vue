@@ -34,12 +34,35 @@
           <img
             class="bg-pattern"
             :src="SvgPatternCircleLight"
-            alt="Circle pattern"
+            alt="A pattern with three circles hidden in the background"
           />
           <img
             class="illustration-img"
-            :src="SvgIllustrationEditorDesktop"
-            alt="Editor illustration"
+            :src="SvgIllustrationEditor"
+            alt="An illustration depicts a text editor"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="section-features section-features-alt">
+      <img
+        class="illustration-img"
+        :src="SvgIllustrationPhone"
+        alt="An illustraion depicts two phones"
+      />
+      <div class="section-content">
+        <h2 class="section-title">State of the Art Infrastructure</h2>
+        <p class="copy-text">
+          With reliability and speed in mind, worldwide data centers provide the
+          backbone for ultra-fast connectivity. This ensures your site will load
+          instantly, no matter where your readers are, keeping your site
+          competitive.
+        </p>
+        <div class="bg-pattern-container">
+          <img
+            class="bg-pattern"
+            :src="SvgPatternCircleDark"
+            alt="A pattern with three circles hidden in the background"
           />
         </div>
       </div>
@@ -59,8 +82,9 @@
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 2200px 2200px, cover;
-  min-height: 100vh;
-  height: 720px;
+  min-height: 700px;
+  height: 100vh;
+  padding: var(--border-radius-large) 0;
   border-bottom-left-radius: var(--border-radius-large);
 
   display: flex;
@@ -103,6 +127,55 @@
   margin: 8rem 0;
 }
 
+.section-features-alt {
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--color-secondary-1);
+    border-bottom-left-radius: var(--border-radius-large);
+    border-top-right-radius: var(--border-radius-large);
+    padding: var(--border-radius-large) 0;
+    margin-top: -50%;
+    min-height: 150vw;
+
+    .section-title,
+    .copy-text {
+      position: relative;
+      z-index: 100;
+      color: var(--color-white-1);
+    }
+
+    .bg-pattern-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top-right-radius: var(--border-radius-large);
+      width: 100%;
+      padding-bottom: 120%;
+      overflow: hidden;
+
+      .bg-pattern {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 140%;
+        transform: translate(-50%, -30%);
+        z-index: 10;
+      }
+    }
+  }
+
+  .illustration-img {
+    position: relative;
+    width: 105%;
+    z-index: 99;
+    order: -1;
+  }
+}
+
 .feature-block {
   display: flex;
   flex-direction: column;
@@ -118,8 +191,9 @@
 }
 
 .section-title {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: var(--color-secondary-1);
+  line-height: 1.5;
   margin: 2rem 2rem 4rem 2rem;
   text-align: center;
 }
@@ -145,7 +219,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90vw;
+  width: 95%;
 
   order: -1;
 
@@ -154,7 +228,7 @@
     width: 80%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -53%);
   }
 
   .illustration-img {
@@ -171,10 +245,6 @@
       margin: 0;
       margin-right: 1.2rem;
     }
-  }
-
-  .illustrations {
-    width: 85%;
   }
 
   .copy-text {
@@ -216,7 +286,9 @@ import Button from "@/components/Button.vue";
 
 import SvgHeroBackground from "@/assets/bg-pattern-intro.svg";
 import SvgPatternCircleLight from "@/assets/bg-pattern-circles-light.svg";
-import SvgIllustrationEditorDesktop from "@/assets/illustration-editor-desktop.svg";
+import SvgPatternCircleDark from "@/assets/bg-pattern-circles-dark.svg";
+import SvgIllustrationEditor from "@/assets/illustration-editor.svg";
+import SvgIllustrationPhone from "@/assets/illustration-phones.svg";
 
 export default {
   name: "Home",
@@ -226,7 +298,9 @@ export default {
   data() {
     return {
       SvgPatternCircleLight,
-      SvgIllustrationEditorDesktop,
+      SvgPatternCircleDark,
+      SvgIllustrationEditor,
+      SvgIllustrationPhone,
     };
   },
   computed: {
