@@ -67,6 +67,39 @@
         </div>
       </div>
     </section>
+    <section class="section-features">
+      <div class="feature-block">
+        <div class="text-container">
+          <h3 class="section-subtitle">Free, open, simple</h3>
+          <p class="copy-text">
+            Blogr is a free and open source application backed by a large
+            community of helpful developers. It supports features such as code
+            syntax highlighting, RSS feeds, social media integration,
+            third-party commenting tools, and works seamlessly with Google
+            Analytics. The architecture is clean and is relatively easy to
+            learn.
+          </p>
+          <h3 class="section-subtitle">Powerful tooling</h3>
+          <p class="copy-text">
+            Batteries included. We built a simple and straightforward CLI tool
+            that makes customization and deployment a breeze, but capable of
+            producing even the most complicated sites.
+          </p>
+        </div>
+        <div class="illustrations">
+          <img
+            class="bg-pattern"
+            :src="SvgPatternCircleLight"
+            alt="A pattern with three circles hidden in the background"
+          />
+          <img
+            class="illustration-img"
+            :src="SvgIllustrationLaptop"
+            alt="An illustration depicts a laptop"
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -288,6 +321,7 @@ import SvgHeroBackground from "@/assets/bg-pattern-intro.svg";
 import SvgPatternCircleLight from "@/assets/bg-pattern-circles-light.svg";
 import SvgPatternCircleDark from "@/assets/bg-pattern-circles-dark.svg";
 import SvgIllustrationEditor from "@/assets/illustration-editor.svg";
+import SvgIllustrationLaptop from "@/assets/illustration-laptop.svg";
 import SvgIllustrationPhone from "@/assets/illustration-phones.svg";
 
 export default {
@@ -300,6 +334,7 @@ export default {
       SvgPatternCircleLight,
       SvgPatternCircleDark,
       SvgIllustrationEditor,
+      SvgIllustrationLaptop,
       SvgIllustrationPhone,
     };
   },
