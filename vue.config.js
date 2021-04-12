@@ -27,4 +27,12 @@ module.exports = {
         name: "img/[name].[hash:8].[ext]",
       });
   },
+
+  css: {
+    loaderOptions: {
+      scss: {
+        prependData: `@import "~@/styles/_variables.scss";`,
+      },
+    },
+  },
 };

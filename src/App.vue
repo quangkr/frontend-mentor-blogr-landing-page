@@ -2,7 +2,7 @@
   <router-view />
 </template>
 
-<style>
+<style lang="scss">
 :root {
   --color-primary-1: hsl(356, 100%, 66%);
   --color-primary-2: hsl(355, 100%, 74%);
@@ -23,5 +23,17 @@
 
   --border-radius: 30px;
   --border-radius-large: 80px;
+}
+
+@media only screen and (min-width: $sm) {
+  html {
+    font-size: 110%;
+  }
+}
+
+@media only screen and (min-width: $md) {
+  html {
+    font-size: 120%;
+  }
 }
 </style>

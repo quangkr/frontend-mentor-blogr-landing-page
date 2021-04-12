@@ -7,11 +7,12 @@
 <style lang="scss" scoped>
 .button {
   border-radius: var(--border-radius);
-  padding: 1rem 1rem;
+  padding: 1rem 0.8rem;
   min-width: 8rem;
 
   font-family: var(--font-family-secondary);
   font-weight: 500;
+  font-size: 1rem;
 
   border-style: solid;
   border-width: 2px;
@@ -69,6 +70,13 @@
     &:active {
       box-shadow: none;
     }
+  }
+}
+
+@media only screen and (min-width: $sm) {
+  .button {
+    padding: 1rem 1rem;
+    min-width: 9rem;
   }
 }
 </style>
