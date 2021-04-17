@@ -10,9 +10,9 @@
         <Button outlined>Learn more</Button>
       </div>
     </section>
-    <section class="section-features">
+    <section class="section-features section-features-reverse">
       <h2 class="section-title">Designed for the future</h2>
-      <div class="feature-block">
+      <div class="section-feature-content">
         <div class="text-container">
           <h3 class="section-subtitle">Introducing an extensible editor</h3>
           <p class="copy-text">
@@ -44,31 +44,35 @@
         </div>
       </div>
     </section>
-    <section class="section-features section-features-alt">
-      <img
-        class="illustration-img"
-        :src="SvgIllustrationPhone"
-        alt="An illustraion depicts two phones"
-      />
-      <div class="section-content">
-        <h2 class="section-title">State of the Art Infrastructure</h2>
-        <p class="copy-text">
-          With reliability and speed in mind, worldwide data centers provide the
-          backbone for ultra-fast connectivity. This ensures your site will load
-          instantly, no matter where your readers are, keeping your site
-          competitive.
-        </p>
-        <div class="bg-pattern-container">
+    <section class="section-features section-features-dark">
+      <div class="section-feature-content">
+        <div class="bg-container">
           <img
             class="bg-pattern"
             :src="SvgPatternCircleDark"
             alt="A pattern with three circles hidden in the background"
           />
         </div>
+        <div class="illustrations">
+          <img
+            class="illustration-img"
+            :src="SvgIllustrationPhone"
+            alt="An illustraion depicts two phones"
+          />
+        </div>
+        <div class="text-container">
+          <h2 class="section-title">State of the Art Infrastructure</h2>
+          <p class="copy-text">
+            With reliability and speed in mind, worldwide data centers provide
+            the backbone for ultra-fast connectivity. This ensures your site
+            will load instantly, no matter where your readers are, keeping your
+            site competitive.
+          </p>
+        </div>
       </div>
     </section>
     <section class="section-features">
-      <div class="feature-block">
+      <div class="section-feature-content">
         <div class="text-container">
           <h3 class="section-subtitle">Free, open, simple</h3>
           <p class="copy-text">
@@ -158,63 +162,54 @@
   flex-direction: column;
   align-items: center;
   margin: 8rem 0;
+  text-align: center;
 }
 
-.section-features-alt {
-  .section-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.section-feature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.section-features-dark {
+  position: relative;
+  margin-top: 12rem;
+  padding-bottom: var(--border-radius-large);
+  padding-top: 0;
+
+  .section-title,
+  .copy-text {
+    color: var(--color-white-1);
+    z-index: 10;
+  }
+
+  .illustrations {
+    margin-top: -50%;
+  }
+
+  .bg-container {
+    position: absolute;
     background-color: var(--color-secondary-1);
     border-bottom-left-radius: var(--border-radius-large);
     border-top-right-radius: var(--border-radius-large);
-    padding: var(--border-radius-large) 0;
-    margin-top: -50%;
-    min-height: 150vw;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
-    .section-title,
-    .copy-text {
-      position: relative;
-      z-index: 100;
-      color: var(--color-white-1);
-    }
-
-    .bg-pattern-container {
+    .bg-pattern {
       position: absolute;
       top: 0;
-      left: 0;
-      border-top-right-radius: var(--border-radius-large);
-      width: 100%;
-      padding-bottom: 120%;
-      overflow: hidden;
-
-      .bg-pattern {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 140%;
-        transform: translate(-50%, -30%);
-        z-index: 10;
-      }
+      left: 50%;
+      width: 160%;
+      transform: translate(-50%, -40%);
+      z-index: 1;
     }
   }
-
-  .illustration-img {
-    position: relative;
-    width: 105%;
-    z-index: 99;
-    order: -1;
-  }
-}
-
-.feature-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  max-width: $xl;
 }
 
 .text-container {
@@ -228,21 +223,21 @@
   color: var(--color-secondary-1);
   line-height: 1.5;
   margin: 2rem 2rem 4rem 2rem;
-  text-align: center;
+  text-align: inherit;
 }
 
 .section-subtitle {
   font-size: 2rem;
   color: var(--color-secondary-1);
   margin: 4rem 2rem 2rem 2rem;
-  text-align: center;
+  text-align: inherit;
 }
 
 .copy-text {
   font-size: 1.2rem;
   color: var(--color-cool-gray-1);
   margin: 1rem 1rem;
-  text-align: center;
+  text-align: inherit;
   line-height: 1.5;
   letter-spacing: 0.02rem;
 }
@@ -266,7 +261,7 @@
 
   .illustration-img {
     width: 100%;
-    z-index: 10;
+    z-index: 50;
   }
 }
 
@@ -282,6 +277,14 @@
 
   .copy-text {
     margin: 1rem 3rem;
+  }
+
+  .section-features-dark {
+    margin-top: 16rem;
+
+    .illustrations {
+      margin-top: -45%;
+    }
   }
 }
 
@@ -301,15 +304,91 @@
   .copy-text {
     margin: 1rem 5rem;
   }
+
+  .section-features-dark {
+    .illustrations {
+      margin-top: -35%;
+    }
+
+    .bg-container {
+      .bg-pattern {
+        width: 120%;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: $lg) {
-  .feature-block {
-    flex-direction: row;
+  .section-features {
+    text-align: left;
   }
 
-  .illustrations {
-    order: 0;
+  .section-feature-content {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    --gap: 2rem;
+    margin: 0 calc(-1 * var(--gap));
+    width: calc(100% + var(--gap));
+
+    & > * {
+      margin: 0 var(--gap);
+    }
+
+    .text-container {
+      flex: 1 1 0;
+      align-items: flex-start;
+    }
+
+    .illustrations {
+      flex: 1 1 0;
+    }
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    margin: 4rem 0 2rem 0;
+    font-size: 1.8rem;
+  }
+
+  .copy-text {
+    margin: 1rem 0;
+    font-size: 1rem;
+  }
+
+  .section-features-reverse {
+    .illustrations {
+      order: 0;
+    }
+  }
+
+  .section-features-dark {
+    margin-top: unset;
+    margin: 8rem 0;
+    padding-top: var(--border-radius-large);
+
+    .illustrations {
+      margin-top: 0;
+
+      .illustration-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .bg-container {
+      .bg-pattern {
+        top: 0;
+        left: 0;
+        transform: translate(-25%, -40%);
+        width: 70%;
+      }
+    }
   }
 }
 </style>

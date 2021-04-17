@@ -26,7 +26,7 @@
 }
 
 #app {
-  width: 100vw;
+  width: 100%;
 }
 
 @media only screen and (min-width: $sm) {
