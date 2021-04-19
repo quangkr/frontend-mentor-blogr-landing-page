@@ -17,7 +17,7 @@
   border-style: solid;
   border-width: 2px;
 
-  transition-property: transform, box-shadow;
+  transition-property: background-color transform, box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in;
 
