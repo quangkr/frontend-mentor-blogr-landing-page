@@ -104,6 +104,7 @@
         </div>
       </div>
     </section>
+    <Footer />
   </div>
 </template>
 
@@ -403,6 +404,7 @@
 
 <script>
 import Button from "@/components/Button.vue";
+import Footer from "@/components/Footer.vue";
 
 import SvgHeroBackground from "@/assets/bg-pattern-intro.svg";
 import SvgPatternCircleLight from "@/assets/bg-pattern-circles-light.svg";
@@ -415,6 +417,7 @@ export default {
   name: "Home",
   components: {
     Button,
+    Footer,
   },
   data() {
     return {
