@@ -61,7 +61,7 @@
           />
         </div>
         <div class="text-container">
-          <h2 class="section-title">State of the Art Infrastructure</h2>
+          <h2 class="section-subtitle">State of the Art Infrastructure</h2>
           <p class="copy-text">
             With reliability and speed in mind, worldwide data centers provide
             the backbone for ultra-fast connectivity. This ensures your site
@@ -179,10 +179,14 @@
   padding-bottom: var(--border-radius-large);
   padding-top: 0;
 
-  .section-title,
+  .section-subtitle,
   .copy-text {
     color: var(--color-white-1);
     z-index: 10;
+  }
+
+  .section-subtitle {
+    font-size: 2.5rem;
   }
 
   .illustrations {
@@ -326,7 +330,7 @@
   .section-feature-content {
     flex-direction: row;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: $xl;
     --gap: 2rem;
     margin: 0 calc(-1 * var(--gap));
     width: calc(100% + var(--gap));
@@ -346,17 +350,18 @@
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .section-subtitle {
     margin: 4rem 0 2rem 0;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .copy-text {
     margin: 1rem 0;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.8;
   }
 
   .section-features-reverse {
@@ -366,9 +371,12 @@
   }
 
   .section-features-dark {
-    margin-top: unset;
     margin: 8rem 0;
-    padding-top: var(--border-radius-large);
+    padding: 4rem 0;
+
+    .section-subtitle {
+      font-size: 1.8rem;
+    }
 
     .illustrations {
       margin-top: 0;
