@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
+import NotFound from "../views/NotFound.vue";
 
 const DEFAULT_TITLE = "Blogr - A modern publishing platform";
 const routes = [
@@ -8,6 +9,7 @@ const routes = [
     name: "Home",
     component: Home,
   },
+
   //{
   //  path: "/about",
   //  name: "About",
@@ -18,6 +20,13 @@ const routes = [
   //    import(/* webpackChunkName: "about" */ "../views/About.vue"),
   //  meta: { title: () => "Blogr | About us" },
   //},
+
+  // catch all and redirect to 404 page, should be at the end
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: NotFound,
+  },
 ];
 
 const router = createRouter({
