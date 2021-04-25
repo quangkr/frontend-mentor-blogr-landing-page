@@ -21,7 +21,7 @@
 
   --content-width: 1280px;
 
-  --border-radius: 30px;
+  --border-radius: 10px;
   --border-radius-large: 150px;
 }
 

@@ -6,7 +6,8 @@
 
 <style lang="scss" scoped>
 .button {
-  border-radius: var(--border-radius);
+  /* use huge border-radius for semi-circle shape */
+  border-radius: 10000px;
   padding: 1rem 0.8rem;
   min-width: 8rem;
 
