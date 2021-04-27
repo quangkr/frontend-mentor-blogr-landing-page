@@ -1,5 +1,6 @@
 <template>
   <div :style="styleVars" class="home-page">
+    <NavContainer />
     <section class="section-hero">
       <h1 class="hero-title">A modern publishing platform</h1>
       <p class="hero-description">
@@ -405,6 +406,7 @@
 <script>
 import Button from "@/components/Button.vue";
 import Footer from "@/components/Footer.vue";
+import NavContainer from "@/components/NavContainer.vue";
 
 import SvgHeroBackground from "@/assets/bg-pattern-intro.svg";
 import SvgPatternCircleLight from "@/assets/bg-pattern-circles-light.svg";
@@ -418,6 +420,7 @@ export default {
   components: {
     Button,
     Footer,
+    NavContainer,
   },
   data() {
     return {
