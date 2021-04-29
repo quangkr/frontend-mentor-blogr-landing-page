@@ -1,11 +1,14 @@
 <template>
-  <button class="button" :class="{ outlined: outlined }">
+  <button class="button" :class="{ outlined: outlined, inversed: inversed }">
     <slot></slot>
   </button>
 </template>
 
 <style lang="scss" scoped>
 .button {
+  --btn-color-neutral: var(--color-white-1);
+  --btn-color-accent: var(--color-primary-2);
+
   /* use huge border-radius for semi-circle shape */
   border-radius: 10000px;
   padding: 1rem 0.8rem;
@@ -18,22 +21,19 @@
   border-style: solid;
   border-width: 2px;
 
-  transition-property: background-color transform, box-shadow;
+  transition-property: background-color, transform, box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in;
 
-  --btn-bg: var(--color-white-1);
-  --btn-fg: var(--color-primary-2);
-
-  background-color: var(--btn-bg);
-  color: var(--btn-fg);
-  border-color: var(--btn-bg);
+  background-color: var(--btn-color-neutral);
+  color: var(--btn-color-accent);
+  border-color: var(--btn-color-neutral);
   box-shadow: 5px 5px 7px #0002;
 
   &:hover {
-    background-color: var(--btn-fg);
-    color: var(--btn-bg);
-    border-color: var(--btn-fg);
+    background-color: var(--btn-color-accent);
+    color: var(--btn-color-neutral);
+    border-color: var(--btn-color-accent);
     box-shadow: 7px 7px 9px #0002;
     transform: translateY(-1px);
   }
@@ -44,32 +44,26 @@
     transform: translateY(1px);
   }
 
-  &.outlined {
-    background-color: transparent;
-    color: var(--btn-bg);
-    border-color: var(--btn-bg);
+  &.inversed {
+    background-color: var(--btn-color-accent);
+    color: var(--btn-color-neutral);
+    border-color: var(--btn-color-accent);
 
     &:hover {
-      background-color: var(--btn-bg);
-      color: var(--btn-fg);
+      background-color: var(--btn-color-neutral);
+      color: var(--btn-color-accent);
+      border-color: var(--btn-color-neutral);
     }
   }
 
-  &.transparent {
+  &.outlined {
     background-color: transparent;
-    color: var(--btn-bg);
-    border-color: transparent;
-    box-shadow: none;
+    color: var(--btn-color-neutral);
+    border-color: var(--btn-color-neutral);
 
     &:hover {
-      background-color: var(--btn-bg);
-      color: var(--btn-fg);
-      border-color: var(--btn-bg);
-      box-shadow: none;
-    }
-
-    &:active {
-      box-shadow: none;
+      background-color: var(--btn-color-neutral);
+      color: var(--btn-color-accent);
     }
   }
 }
@@ -86,11 +80,8 @@
 export default {
   name: "Button",
   props: {
-    outlined: {
-      required: false,
-      type: Boolean,
-      default: false,
-    },
+    outlined: Boolean,
+    inversed: Boolean,
   },
 };
 </script>

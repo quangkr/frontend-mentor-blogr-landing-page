@@ -46,7 +46,7 @@
             <NavItem to="/#login">login</NavItem>
           </div>
           <div class="nav-item-container">
-            <Button>Sign up</Button>
+            <Button inversed>Sign up</Button>
           </div>
         </div>
       </div>
@@ -59,6 +59,7 @@
   --nav-height: 6rem;
   --nav-header-height: 4rem;
   --nav-content-margin: 2rem;
+  --nav-content-padding: 2rem;
   --nav-item-gap: 1rem;
 
   position: absolute;
@@ -123,7 +124,7 @@
     background-color: var(--color-white-1);
     border-radius: var(--border-radius);
     box-shadow: 0px 8px 20px 5px #0004;
-    padding: 2rem;
+    padding: var(--nav-content-padding);
     z-index: 9002;
 
     display: flex;
@@ -141,6 +142,11 @@
     align-items: center;
 
     margin: var(--nav-item-gap) 0;
+
+    &:last-child::after {
+      content: "";
+      height: calc(var(--nav-item-gap) + var(--nav-content-padding));
+    }
   }
 
   .separator {
