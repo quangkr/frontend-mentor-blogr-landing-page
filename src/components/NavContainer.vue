@@ -1,17 +1,40 @@
 <template>
   <div class="nav-container">
     <NavMobile class="nav-mobile" :nav-data="navData" />
+    <NavDesktop class="nav-desktop" :nav-data="navData" />
   </div>
 </template>
 
+<style lang="scss" scoped>
+.nav-mobile {
+  display: flex;
+}
+
+.nav-desktop {
+  display: none;
+}
+
+@media only screen and (min-width: $lg) {
+  .nav-mobile {
+    display: none;
+  }
+
+  .nav-desktop {
+    display: flex;
+  }
+}
+</style>
+
 <script>
 import NavMobile from "./NavMobile.vue";
+import NavDesktop from "./NavDesktop.vue";
 
 export default {
   name: "NavContainer",
 
   components: {
     NavMobile,
+    NavDesktop,
   },
 
   data() {
