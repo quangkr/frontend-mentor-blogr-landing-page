@@ -26,9 +26,6 @@
   justify-content: center;
   align-items: baseline;
 
-  font-family: var(--font-family-primary);
-  font-size: 1rem;
-  font-weight: 600;
   color: var(--color-secondary-1);
   text-transform: capitalize;
   cursor: pointer;

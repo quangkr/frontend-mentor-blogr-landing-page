@@ -11,15 +11,13 @@
 
   /* use huge border-radius for semi-circle shape */
   border-radius: 10000px;
-  padding: 1rem 0.8rem;
-  min-width: 8rem;
+  border-style: solid;
+  border-width: 2px;
+  padding: 0.8em 0.8em;
+  min-width: 8em;
 
   font-family: var(--font-family-secondary);
   font-weight: 500;
-  font-size: 1rem;
-
-  border-style: solid;
-  border-width: 2px;
 
   transition-property: background-color, transform, box-shadow;
   transition-duration: 0.1s;
@@ -70,8 +68,8 @@
 
 @media only screen and (min-width: $sm) {
   .button {
-    padding: 1rem 1rem;
-    min-width: 9rem;
+    padding: 0.9em 0.9em;
+    min-width: 9em;
   }
 }
 </style>

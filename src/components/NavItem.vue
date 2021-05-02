@@ -1,17 +1,12 @@
 <template>
-  <router-link class="nav-item" :to="to">
+  <router-link class="nav-item" :class="computedClassName" :to="to">
     <slot></slot>
   </router-link>
 </template>
 
 <style lang="scss" scoped>
 .nav-item {
-  font-family: var(--font-family-primary);
-  font-size: 1rem;
-  font-weight: 600;
-  color: hsla(var(--color-hsl-secondary-1), 0.7);
   text-transform: capitalize;
-
   border-bottom: solid 2px transparent;
 
   &:link,
@@ -28,8 +23,36 @@
     transform: scale(95%);
   }
 
-  &.router-link-exact-active {
-    color: hsla(var(--color-hsl-secondary-1), 1);
+  &.text-primary {
+    color: hsla(var(--color-hsl-primary-1), 0.7);
+
+    &.router-link-exact-active {
+      color: hsla(var(--color-hsl-primary-1), 1);
+    }
+  }
+
+  &.text-secondary {
+    color: hsla(var(--color-hsl-secondary-1), 0.7);
+
+    &.router-link-exact-active {
+      color: hsla(var(--color-hsl-secondary-1), 1);
+    }
+  }
+
+  &.text-white {
+    color: hsla(var(--color-hsl-white-1), 0.7);
+
+    &.router-link-exact-active {
+      color: hsla(var(--color-hsl-white-1), 1);
+    }
+  }
+
+  &.text-black {
+    color: hsla(var(--color-hsl-black-1), 0.7);
+
+    &.router-link-exact-active {
+      color: hsla(var(--color-hsl-black-1), 1);
+    }
   }
 }
 </style>
@@ -42,6 +65,19 @@ export default {
     to: {
       type: String,
       required: true,
+    },
+    color: {
+      type: String,
+      required: false,
+      default: "secondary",
+      validator: (value) =>
+        ["primary", "secondary", "white", "black"].includes(value),
+    },
+  },
+
+  computed: {
+    computedClassName() {
+      return `text-${this.$props.color}`;
     },
   },
 };

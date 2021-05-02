@@ -74,6 +74,10 @@
   padding: 0.8rem var(--nav-content-margin);
   height: var(--nav-header-height);
 
+  font-family: var(--font-family-primary);
+  font-size: 1rem;
+  font-weight: 600;
+
   .logo {
     height: 100%;
     width: auto;
@@ -132,8 +136,6 @@
     justify-content: flex-start;
     align-items: stretch;
     overflow-y: scroll;
-
-    font-family: var(--font-family-secondary);
   }
 
   .nav-item-container {
