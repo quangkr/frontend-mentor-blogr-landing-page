@@ -8,6 +8,7 @@
 .nav-item {
   text-transform: capitalize;
   border-bottom: solid 2px transparent;
+  font-weight: 400;
 
   &:link,
   &:visited {
@@ -15,8 +16,8 @@
   }
 
   &:hover {
-    border-bottom: solid 2px currentColor;
     cursor: pointer;
+    font-weight: 500;
   }
 
   &:active {

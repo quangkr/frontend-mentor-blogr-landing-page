@@ -41,11 +41,6 @@ export default {
     return {
       navData: [
         {
-          name: "home",
-          single: true,
-          target: "/",
-        },
-        {
           name: "product",
           single: false,
           members: [

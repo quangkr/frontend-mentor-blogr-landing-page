@@ -178,7 +178,7 @@ import SvgLogo from "@/assets/logo.svg";
 import SvgHamburger from "@/assets/icon-hamburger.svg";
 import SvgClose from "@/assets/icon-close.svg";
 
-import NavItem from "./NavItem.vue";
+import NavItem from "./NavItemMobile.vue";
 import NavGroup from "./NavGroupMobile.vue";
 import Button from "@/components/Button.vue";
 

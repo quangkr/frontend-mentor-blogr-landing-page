@@ -1,13 +1,17 @@
 <template>
   <nav class="nav">
     <div class="nav-content-container">
-      <div class="nav-item-container">
+      <div class="nav-item-container nav-logo">
         <img class="logo" :src="SvgLogo" alt="Company logo" />
       </div>
-      <span class="separator-2"></span>
-      <template v-for="(item, idx) in navData" :key="idx">
-        <div class="nav-item-container">
-          <NavItem v-if="item.single" :to="item.target" color="white">
+      <div class="nav-item-container nav-links">
+        <template v-for="(item, idx) in navData" :key="idx">
+          <NavItem
+            v-if="item.single"
+            :to="item.target"
+            color="white"
+            hover-style="bold"
+          >
             {{ item.name }}
           </NavItem>
           <NavGroup v-else>
@@ -18,20 +22,16 @@
                 :key="linkIdx"
                 :to="link.target"
                 color="black"
+                hover-style="bold"
               >
                 {{ link.name }}
               </NavItem>
             </template>
           </NavGroup>
-        </div>
-        <span class="separator-1"></span>
-      </template>
-      <span class="separator-4"></span>
-      <div class="nav-item-container login">
-        <NavItem to="/#login" color="white">login</NavItem>
+        </template>
       </div>
-      <span class="separator-1"></span>
-      <div class="nav-item-container sign-up">
+      <div class="nav-item-container nav-login">
+        <NavItem to="/#login" color="white" hover-style="bold">login</NavItem>
         <Button inversed>Sign up</Button>
       </div>
     </div>
@@ -55,43 +55,41 @@
   width: 100%;
   height: var(--nav-height);
   font-family: var(--font-family-secondary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
 
   .nav-content-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: stretch;
     width: 100%;
     max-width: $xl;
     height: var(--nav-header-height);
 
-    .separator {
-      &-1 {
+    .nav-item-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &.nav-logo {
         flex: 1 0 0;
       }
 
-      &-2 {
-        flex: 2 0 0;
-      }
-
-      &-3 {
+      &.nav-links {
         flex: 3 0 0;
+
+        & > * {
+          margin-right: var(--nav-item-gap);
+        }
       }
 
-      &-4 {
-        flex: 4 0 0;
-      }
-    }
+      &.nav-login {
+        flex: 2 0 0;
+        justify-content: flex-end;
 
-    .nav-item-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .logo {
-        height: 80%;
-        width: auto;
+        & > * {
+          margin-left: var(--nav-item-gap);
+        }
       }
     }
   }
@@ -101,7 +99,7 @@
 <script>
 import SvgLogo from "@/assets/logo.svg";
 
-import NavItem from "./NavItem.vue";
+import NavItem from "./NavItemDesktop.vue";
 import NavGroup from "./NavGroupDesktop.vue";
 import Button from "@/components/Button.vue";
 
