@@ -11,6 +11,7 @@ Users should be able to:
 
 ## Progress
 
-- [ ] Basic HTML markup
-- [ ] Styling with CSS
-- [ ] Dynamic interaction with JS
+- [x] Basic HTML markup
+- [x] Styling with CSS
+- [ ] Fix small visual glitches
+- [ ] Add more pages
