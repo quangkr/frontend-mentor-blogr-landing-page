@@ -6,12 +6,7 @@
       </div>
       <div class="nav-item-container nav-links">
         <template v-for="(item, idx) in navData" :key="idx">
-          <NavItem
-            v-if="item.single"
-            :to="item.target"
-            color="white"
-            hover-style="bold"
-          >
+          <NavItem v-if="item.single" :to="item.target" color="white">
             {{ item.name }}
           </NavItem>
           <NavGroup v-else>
@@ -22,7 +17,6 @@
                 :key="linkIdx"
                 :to="link.target"
                 color="black"
-                hover-style="bold"
               >
                 {{ link.name }}
               </NavItem>
