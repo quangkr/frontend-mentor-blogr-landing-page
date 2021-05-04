@@ -25,7 +25,7 @@
         </template>
       </div>
       <div class="nav-item-container nav-login">
-        <NavItem to="/#login" color="white" hover-style="bold">login</NavItem>
+        <NavItem to="/#login" color="white">login</NavItem>
         <Button inversed>Sign up</Button>
       </div>
     </div>
