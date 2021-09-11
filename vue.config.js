@@ -1,8 +1,5 @@
 module.exports = {
-  publicPath:
-    process.env.NODE_ENV === "production"
-      ? "/frontendmentor-blogr-landing-page/"
-      : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/" : "/",
 
   chainWebpack: (config) => {
     const svgRule = config.module.rule("svg");
