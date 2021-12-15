@@ -6,8 +6,10 @@
       </span>
       <img :src="SvgArrowLight" alt="Arrow icon" class="icon-arrow" />
     </div>
-    <div class="nav-group-content">
-      <slot name="content"></slot>
+    <div class="nav-group-items-container">
+      <div class="nav-group-items">
+        <slot name="content"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -18,6 +20,17 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+
+  &:hover {
+    .icon-arrow {
+      transform: rotate(180deg);
+    }
+
+    .nav-group-items-container {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }
 
 .nav-group-label {
@@ -38,38 +51,30 @@
   }
 }
 
-.nav-group-content {
+.nav-group-items-container {
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-radius: var(--border-radius);
-  margin-top: calc(var(--nav-item-gap) + 1em);
-  margin-left: calc(var(--nav-item-gap) * -1);
-  padding: var(--nav-item-gap) calc(var(--nav-item-gap) * 3) var(--nav-item-gap)
-    var(--nav-item-gap);
-  background-color: var(--color-white-1);
   transition-property: opacity, visibility;
   transition-duration: 0.1s;
   transition-timing-function: ease-in;
   visibility: hidden;
   opacity: 0;
+}
+
+.nav-group-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: var(--border-radius);
+  background-color: var(--color-white-1);
+  margin-top: calc(var(--nav-item-gap) + 1em);
+  margin-left: calc(var(--nav-item-gap) * -1);
+  padding: var(--nav-item-gap) calc(var(--nav-item-gap) * 3) var(--nav-item-gap)
+    var(--nav-item-gap);
 
   & > :not(:first-child) {
     margin-top: var(--nav-item-gap);
-  }
-}
-
-.nav-group-container:hover {
-  .icon-arrow {
-    transform: rotate(180deg);
-  }
-
-  .nav-group-content {
-    visibility: visible;
-    opacity: 1;
   }
 }
 </style>
