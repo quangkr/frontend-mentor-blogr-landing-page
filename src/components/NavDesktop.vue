@@ -9,7 +9,12 @@
           <NavItem v-if="item.single" :to="item.target" color="white">
             {{ item.name }}
           </NavItem>
-          <NavGroup v-else>
+          <NavGroup
+            v-else
+            :items-width="
+              Math.max(...item.members.map((member) => member.name.length))
+            "
+          >
             <template v-slot:label>{{ item.name }}</template>
             <template v-slot:content>
               <NavItem

@@ -7,7 +7,7 @@
       <img :src="SvgArrowLight" alt="Arrow icon" class="icon-arrow" />
     </div>
     <div class="nav-group-items-container">
-      <div class="nav-group-items">
+      <div class="nav-group-items" :style="style">
         <slot name="content"></slot>
       </div>
     </div>
@@ -68,10 +68,10 @@
   align-items: flex-start;
   border-radius: var(--border-radius);
   background-color: var(--color-white-1);
+  width: calc(var(--items-width) + (var(--nav-item-gap) * 3));
   margin-top: calc(var(--nav-item-gap) + 1em);
   margin-left: calc(var(--nav-item-gap) * -1);
-  padding: var(--nav-item-gap) calc(var(--nav-item-gap) * 3) var(--nav-item-gap)
-    var(--nav-item-gap);
+  padding: var(--nav-item-gap);
 
   & > :not(:first-child) {
     margin-top: var(--nav-item-gap);
@@ -85,10 +85,23 @@ import SvgArrowLight from "@/assets/icon-arrow-light.svg";
 export default {
   name: "NavGroupDesktop",
 
+  props: {
+    itemsWidth: {
+      type: Number,
+      required: true,
+    },
+  },
+
   data() {
     return {
       SvgArrowLight,
     };
+  },
+
+  computed: {
+    style() {
+      return `--items-width: ${this.itemsWidth}ch`;
+    },
   },
 };
 </script>
