@@ -52,6 +52,8 @@
   justify-content: flex-end;
   align-items: center;
   width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
   height: var(--nav-height);
   font-family: var(--font-family-secondary);
   font-size: 0.85rem;
